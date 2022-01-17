@@ -69,7 +69,7 @@ world_map = WorldMap(quality_df["COUNTRY_CODE"].values.tolist(),
 # plot the world map and center it on the selected country
 lon_lat_dict = get_country_lon_lat(countries_df, st.session_state["country"])
 world_map.update_layout(projection_type=projection_type, **lon_lat_dict)
-world_map_placeholder.plotly_chart(world_map.fig)
+world_map_placeholder.plotly_chart(world_map.fig, use_container_width=True)
 
 # get the quality profile vector for the selected country
 coffee_quality = quality_df.loc[st.session_state["country"], QUALITY_MEASURES]
