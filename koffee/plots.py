@@ -3,8 +3,8 @@ import numpy as np
 
 import matplotlib.pyplot as plt
 from matplotlib import rc
-#rc('font',**{'family':'sans-serif','sans-serif':["cm"]})
-#rc("text", **{"usetex": True})
+rc('font',**{'family':"STIXGeneral"})
+
 
 import plotly.graph_objects as go 
 import streamlit as st

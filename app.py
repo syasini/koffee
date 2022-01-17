@@ -8,9 +8,6 @@ from koffee.utils import filter_column, get_quality_agg, get_country_lon_lat,\
     check_dataframe_is_empty, filter_count, convert_df, get_altitudes,\
     get_cosine_similarity
 
-import matplotlib
-[f.name for f in matplotlib.font_manager.fontManager.ttflist]
-
 # let's go!
 
 # logo and title 
