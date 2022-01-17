@@ -1,1 +1,1 @@
-msttcorefonts -qq
+font-manager
