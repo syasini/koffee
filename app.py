@@ -8,14 +8,21 @@ from koffee.utils import filter_column, get_quality_agg, get_country_lon_lat,\
     check_dataframe_is_empty, filter_count, convert_df, get_altitudes,\
     get_cosine_similarity
 
-# let's go!
+# Let's go!
 
-# logo and title 
+# ==============
+# Logo and Title
+# ============== 
+
 plot_logo()
 st.sidebar.title("Koffee of the world")
 st.sidebar.markdown("Made by [Siavash Yasini](https://www.linkedin.com/in/siavash-yasini/), while holding a cup of :coffee:!")
 
-# settings
+
+# ==============
+#    Settings
+# ==============
+
 st.sidebar.header("Settings")
 
 projection_type = st.sidebar.radio("Map Projection Type", ["orthographic", "stereographic", "natural earth"])
@@ -35,6 +42,11 @@ st.sidebar.markdown("""---""")
 min_sample_count = st.sidebar.slider("Min Sample Count Required", min_value=1, max_value=20, value=5)
 st.sidebar.caption("Countries with fewer samples than this number in the dataset will be excluded.")
 st.sidebar.markdown("""---""")
+
+
+# ==============
+#   Main App
+# ==============
 
 # load the data
 coffee_df = load_coffee_dataset()
@@ -110,6 +122,11 @@ with st.expander("Aggregated Coffee Profile Table"):
     st.caption("Click on the column names to sort by that column.")
     st.download_button("Download CSV", file_name='koffee_data.csv', data=convert_df(quality_df))
     st.dataframe(quality_df.iloc[:,:-3].style.text_gradient(cmap="YlOrBr"))
+
+
+# ==============
+#    Resources
+# ==============
 
 # finish it up with some information panels 
 st.sidebar.header("Resources")

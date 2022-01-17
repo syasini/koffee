@@ -6,7 +6,8 @@ from koffee.constants import QUALITY_MEASURES, ALTITUDE_COLS, COLOR_LIST, PROC_M
 
 @st.cache
 def get_quality_agg(coffee_df, agg_func="mean", standardize=True, filter_counts_less_than=None):
-    
+    """Aggregate the quality measure dataset over the countries using the indicated aggregation function."""
+
     score_columns = QUALITY_MEASURES + ["TOTAL_CUP_POINTS"]
 
     country_agg = coffee_df.groupby("COUNTRY")[score_columns].agg(agg_func)

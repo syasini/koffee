@@ -5,14 +5,14 @@ import matplotlib.pyplot as plt
 from matplotlib import rc
 rc('font',**{'family':"STIXGeneral"})
 
-
 import plotly.graph_objects as go 
 import streamlit as st
 from koffee import IMAGE_PATH
 
 
 class RadarChart:
-    
+    """This class provides a method for plotting a radar chart of the input categories with their corresponding values."""
+
     def __init__(self,
                  categories, 
                  values,
@@ -126,7 +126,8 @@ def plot_coffee_latte_art(qualities,
     
 
 class WorldMap:
-    
+    """This class provides a method for plotting a choropleth map of the world."""
+
     def __init__(self, locations, z, text=None, colorbar_title=None, ):
         
         self.locations = locations
@@ -178,7 +179,7 @@ class WorldMap:
         
         
 def plot_altitude(country_name, value, low, high, pop_average):
-
+    """plot the altitude of the given country along with a low/high band and the population average."""
     fig = plt.figure(figsize=(5, 10), dpi=100)
 
     ax = fig.add_subplot(111, polar=False, frameon=False,)
@@ -203,4 +204,5 @@ def plot_altitude(country_name, value, low, high, pop_average):
     return fig 
 
 def plot_logo():
+    """plot the 'Koffee of the world' logo."""
     st.image(os.path.join(IMAGE_PATH, "logo.png"))
