@@ -150,7 +150,8 @@ class WorldMap:
                     marker_line_color='darkgray',
                     marker_line_width=1,
                     colorbar_title = self.colorbar_title,
-                    hoverinfo = "all",
+                    #hoverinfo = "all",
+                    #hovertemplate = '%{z:.2f}',
                     **kwargs
             )
         )
