@@ -118,7 +118,7 @@ altitude_fig = plot_altitude(st.session_state["country"], altitude, altitude_low
 st.pyplot(altitude_fig )
 
 # make expander with the aggregated table to be downloaded if needed
-with st.expander("Aggregated Coffee Profile Table"):
+with st.expander("Aggregated ☕️ Profile Table"):
     st.caption("Click on the column names to sort by that column.")
     st.download_button("Download CSV", file_name='koffee_data.csv', data=convert_df(quality_df))
     st.dataframe(quality_df.iloc[:,:-3].style.text_gradient(cmap="YlOrBr"))
@@ -131,14 +131,14 @@ with st.expander("Aggregated Coffee Profile Table"):
 # finish it up with some information panels 
 st.sidebar.header("Resources")
 st.sidebar.info(
-    """Raw data is taken from [here](https://www.kaggle.com/volpatto/coffee-quality-database-from-cqi), 
+    """The raw data is taken from [here](https://www.kaggle.com/volpatto/coffee-quality-database-from-cqi), 
     which has been resourced from [here](https://github.com/jldbc/coffee-quality-database), 
-    originally scraped from [here](https://database.coffeeinstitute.org/)!"""
+    originally scraped from [here](https://database.coffeeinstitute.org/)! Suggestions for better or more comprehensive datasets are more than [welcome](https://github.com/syasini/koffee/issues/new)."""
     )
 
 st.sidebar.info(
     """
-    Images from [here](https://photostockeditor.com/clip-art-vector/chemex), 
+    Images are from [here](https://photostockeditor.com/clip-art-vector/chemex), 
     [here](https://photostockeditor.com/clip-art-vector/steaming-coffee-top-view),
     and [here](https://openclipart.org/detail/263858/vegetation-silhouette-2).
     """
