@@ -26,22 +26,23 @@ st.sidebar.markdown("Made by [Siavash Yasini](https://www.linkedin.com/in/siavas
 st.sidebar.header("Settings")
 
 projection_type = st.sidebar.radio("Map Projection Type", ["orthographic", "stereographic", "natural earth"])
-st.sidebar.markdown("""---""")
+st.sidebar.markdown("---")
 
 standardize = st.sidebar.checkbox("Standardize the data (recommended)", value=True)
-st.sidebar.caption("If checked, each quality measure will be scaled between 0 to 1 for all countries.")
+st.sidebar.caption("""If checked, each quality measure will be scaled between 0 to 1 for all countries. 
+                      For each measure, 0 and 1 will be respectively assigned to countries with the mimimum and maximum values.""")
 
 agg_func = st.sidebar.radio("Aggregation", ["mean", "median", "max"], index=0)
 st.sidebar.caption("This function will be applied to each country's samples to aggregate the quality measures.")
-st.sidebar.markdown("""---""")
+st.sidebar.markdown("---")
 
 color = st.sidebar.multiselect("Bean Color", COLOR_LIST, default=COLOR_LIST)
 proc_method = st.sidebar.multiselect("Processing Method", PROC_METHOD_LIST, default=PROC_METHOD_LIST)
-st.sidebar.markdown("""---""")
+st.sidebar.markdown("---")
 
 min_sample_count = st.sidebar.slider("Min Sample Count Required", min_value=1, max_value=20, value=5)
 st.sidebar.caption("Countries with fewer samples than this number in the dataset will be excluded.")
-st.sidebar.markdown("""---""")
+st.sidebar.markdown("---")
 
 
 # ==============
