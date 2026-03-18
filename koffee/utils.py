@@ -3,8 +3,9 @@ import pandas as pd
 from sklearn.metrics.pairwise import cosine_similarity
 from koffee.constants import QUALITY_MEASURES, ALTITUDE_COLS, COLOR_LIST, PROC_METHOD_LIST
 
+cache_data = getattr(st, "cache_data", st.cache)
 
-@st.cache
+@cache_data
 def get_quality_agg(coffee_df, agg_func="mean", standardize=True, filter_counts_less_than=None):
     """Aggregate the quality measure dataset over the countries using the indicated aggregation function."""
 
@@ -56,7 +57,7 @@ def get_altitudes(quality_df, country_name):
     altitude_high = quality_df.loc[country_name, "ALTITUDE_HIGH_METERS"]
     return altitude, altitude_low, altitude_high
 
-@st.cache
+@cache_data
 def convert_df(quality_df):
      # IMPORTANT: Cache the conversion to prevent computation on every rerun
      return quality_df.to_csv().encode('utf-8')
